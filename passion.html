@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passion - My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b1e3f;
+      --white: #ffffff;
+      --accent-pink: #ff79a9;
+      --light-blue: #e6f0ff;
+      --text-dark: #333333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    main {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 5rem 2rem;
+      transition: background 0.3s;
+      text-align: left;
+    }
+
+    section:nth-child(odd) {
+      background: var(--light-blue);
+    }
+
+    section:nth-child(even) {
+      background: var(--white);
+    }
+
+    section h2 {
+      color: var(--dark-blue);
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--accent-pink);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .passion-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .left-column img {
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .passion-item .text {
+      flex: 1;
+    }
+
+    .passion-item h3 {
+      margin-top: 0;
+      color: var(--dark-blue);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .passion-item ul {
+      padding-left: 1.2rem;
+    }
+
+    .image-btn {
+      display: block;
+      padding: 0.8rem 2rem;
+      background-color: var(--accent-pink);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .image-btn:hover {
+      background-color: var(--dark-blue);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-blue);
+      color: var(--white);
+      margin-top: 4rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 800px) {
+      .passion-item {
+        flex-direction: column;
+        text-align: center;
+      }
+      .passion-item .text {
+        text-align: center;
+      }
+      .left-column img {
+        width: 80%;
+        margin: auto;
+      }
+      .image-btn {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable Navbar -->
+  <div id="navbar"></div>
+
+  <main>
+    <section>
+      <h2>Passions</h2>
+
+      <!-- Kathak -->
+      <div class="passion-item">
+        <div class="left-column">
+          <img src="Dance.png" alt="Kathak Dance">
+        </div>
+        <div class="text">
+          <h3>Kathak</h3>
+          <p>I have been doing an Indian classical dance called Kathak for 10 years. Kathak originated within Hindu temples as a storytelling device for portraying tales from Hindu scriptures. I had my Visharad (graduation) in November 2023, performing 6 dances in front of 500 guests, which takes over a year to prepare for.</p>
+          <p>I have also taught Kathak to younger students and enjoy performing in recitals, weddings, and other events.</p>
+        </div>
+      </div>
+
+      <!-- Helping Beez -->
+      <div class="passion-item">
+        <div class="left-column">
+          <img src="Helpingbeez.png" alt="Helping Beez">
+          <a href="https://www.helpingbeez.com/" class="image-btn" target="_blank">Visit Helping Beez</a>
+        </div>
+        <div class="text">
+          <h3>Helping Beez</h3>
+          <p>I founded the nonprofit organization Helping Beez to give back to the community and provide awareness to future generations about the issues our planet is facing. Past projects about water filtration systems, city accessibility, and space inspired me to start this initiative.</p>
+          <p>Our mission includes:</p>
+          <ul>
+            <li>Planting trees</li>
+            <li>Providing education to underprivileged children</li>
+            <li>Providing safe homes for animals</li>
+            <li>Bringing water to communities in need using in-ground water pumps</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio | Email: esha.mujumdar@gmail.com | Phone: 630-891-0198</p>
+  </footer>
+
+  <script>
+    // Include reusable navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        // Highlight active link
+        const page = window.location.pathname.split("/").pop();
+        document.querySelectorAll('#navbar a.nav-link').forEach(link => {
+          if(link.getAttribute('href') === page) link.classList.add('active');
+        });
+      });
+  </script>
+
+</body>
+</html>

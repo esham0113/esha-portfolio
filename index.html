@@ -3,64 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First GitHub Pages Website</title>
+  <title>Esha's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --dark-blue: #0b1e3f;
+      --white: #ffffff;
+      --accent-pink: #ff79a9;
+      --gradient-start: #fce4ec;
+      --gradient-end: #e6f0ff;
+      --text-dark: #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 2rem 1rem;
+
+    main { margin: 0; padding: 0; }
+
+    /* Hero Section */
+    #home {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
     }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
+
+    #home img {
+      width: 400px;
+      height: auto;
+      border-radius: 12px;
+      border: 4px solid var(--accent-pink);
+      transition: transform 0.3s;
     }
-    p {
-      font-size: 1.2rem;
+
+    #home img:hover { transform: scale(1.05); }
+
+    #home-text {
+      max-width: 600px;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
-    main {
-      padding: 2rem;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
+
+    #home-text.visible { opacity: 1; transform: translateY(0); }
+
+    #home h1 { font-size: 3rem; color: var(--dark-blue); margin-bottom: 1rem; }
+    #home p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+    .button {
       padding: 0.7rem 1.5rem;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
+      background: var(--accent-pink);
+      color: var(--white);
+      border: none;
       border-radius: 8px;
-      transition: 0.3s;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, background 0.3s;
+      display: inline-block;
     }
-    a.button:hover {
-      background: #45a049;
+
+    .button:hover { transform: scale(1.05); background: #ff5f87; }
+
+    /* Connect Section */
+    #connect {
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-top: 4rem;
     }
+
+    #connect h2 { font-size: 2rem; color: var(--dark-blue); margin-bottom: 1rem; }
+    #connect p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: var(--dark-blue);
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover { color: var(--accent-pink); transform: scale(1.2); }
+
     footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #ddd;
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-blue);
+      color: var(--white);
+      margin-top: 4rem;
     }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website 🎉</h1>
-    <p>Hosted with GitHub Pages</p>
-  </header>
 
-  <main>
-    <h2>Hello World!</h2>
-    <p>This is my very first published site using GitHub Pages.</p>
-    <a class="button" href="https://github.com/your-username">Visit my GitHub</a>
-  </main>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+
+        // Highlight active page
+        const page = location.pathname.split("/").pop();
+        document.querySelectorAll('a.nav-link').forEach(link => {
+          if(link.getAttribute('href') === page) link.classList.add('active');
+        });
+      });
+  </script>
+
+  <!-- Hero Section -->
+  <section id="home">
+    <img src="Esha6.png" alt="Esha Photo">
+    <div id="home-text">
+      <h1>Hello, I'm Esha</h1>
+      <p>I am a sophomore at University of Illinois Urbana-Champaign, studying Computer Science. I recently completed my internship at <strong>Zenblen</strong>, a Chicago-based startup with tech-enabled smoothie kiosks. I am passionate about ML, AI, and using my skills to make a positive impact.</p>
+      <a href="work.html" class="button">Work Experience</a>
+    </div>
+  </section>
+
+  <!-- Connect Section -->
+  <section id="connect">
+    <h2>Let's Connect!</h2>
+    <p>Feel free to reach out via Email, LinkedIn, or GitHub located at the bottom of (About Me) section.</p>
+    <div class="social-icons">
+      <a href="mailto:esha.mujumdar@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/your-github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <a href="about.html#connect" class="button">About Me</a>
+  </section>
 
   <footer>
-    <p>&copy; 2025 My Website</p>
+    <p>&copy; 2025 Esha Portfolio</p>
   </footer>
+
+  <!-- Scroll animation for hero text -->
+  <script>
+    const homeText = document.getElementById('home-text');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ homeText.classList.add('visible'); }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(homeText);
+  </script>
+
 </body>
 </html>

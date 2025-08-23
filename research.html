@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research - My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b1e3f;
+      --white: #ffffff;
+      --accent-pink: #ff79a9;
+      --light-blue: #e6f0ff;
+      --text-dark: #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    main { margin: 0; padding: 0; }
+
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 5rem 2rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    section:nth-child(odd) { background: var(--light-blue); }
+    section:nth-child(even) { background: var(--white); }
+
+    section h2 {
+      color: var(--dark-blue);
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--accent-pink);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .research-item {
+      margin-bottom: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .research-item h3 {
+      margin-top: 0;
+      color: var(--dark-blue);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .research-item p { margin: 0.3rem 0; }
+
+    .image-buttons {
+      flex: 0 0 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .image-row img {
+      width: 50%;
+      border-radius: 12px;
+    }
+
+    .image-buttons img:not(.multi) {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-pink);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover { background-color: #ff4f84; }
+
+    .text {
+      flex: 1;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-blue);
+      color: var(--white);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 800px) {
+      .research-item { flex-direction: column; text-align: center; }
+      .text { margin-top: 1rem; }
+      .image-buttons { align-items: center; }
+      .buttons { justify-content: center; flex-direction: row; flex-wrap: wrap; }
+      .image-row img { width: 45%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main>
+    <section>
+      <h2>Research Experience</h2>
+
+      <!-- Human-Extended Reality -->
+      <div class="research-item">
+        <div class="text">
+          <h3>Human-Extended Reality Interaction Research Assistant</h3>
+          <p>Conducted user testing and data analysis for XR user interaction studies; built Unity game environments to support elderly assistance research.</p>
+        </div>
+      </div>
+
+      <!-- Social Cognition Lab -->
+      <div class="research-item">
+        <div class="text">
+          <h3>Social Cognition Lab Research Assistant</h3>
+          <p>Worked with Professor Benedict Kurdi to develop Python scripts that scrape Common Crawl and extract crime-related newspaper articles using keyword filtering.</p>
+          <p>Scraped and processed WARC data to extract relevant articles, implemented Aho–Corasick automaton for efficient keyword matching, and integrated execution on Google Colab with Drive for storage and backup.</p>
+          <div class="buttons">
+            <a href="https://colab.research.google.com/drive/136byexU8Kw5HCyK9Cr8DsCr7PhQcJPAw?usp=sharing" target="_blank">View Colab Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DSI Summer Lab -->
+      <div class="research-item">
+        <div class="image-buttons">
+          <div class="image-row">
+            <img src="DSI.png" alt="DSI Image 1" class="multi">
+            <img src="DSI2.png" alt="DSI Image 2" class="multi">
+          </div>
+          <div class="buttons">
+            <a href="https://docs.google.com/presentation/d/10HkDcsacYDfVdiHjEhkfdlVThFIxVlSr8McDeYDuzSg/edit?userstoinvite=mrlong%40uchicago.edu&sharingaction=manageaccess&role=writer&slide=id.g22ee0c7c9da_0_95#slide=id.g22ee0c7c9da_0_95" target="_blank">Project Info</a>
+          </div>
+        </div>
+        <div class="text">
+          <h3>UChicago DSI Summer Lab - Human-Robot Interaction Lab</h3>
+          <p>Researched effects of robot feedback on human relationships (“Common Enemy” project), analyzed videos for “Role Playing Robot Project”, and coded data analysis measures in R. Presented final project at the Data Science Summer Lab.</p>
+        </div>
+      </div>
+
+      <!-- UMass -->
+      <div class="research-item">
+        <div class="image-buttons">
+          <img src="Kedar_Image.png" alt="UMass Research">
+          <div class="buttons">
+            <a href="https://meetings.aps.org/Meeting/DFD22/Session/G14.1" target="_blank">Abstract Info</a>
+            <a href="https://docs.google.com/presentation/d/1oPqBrOEIFBAnuhnm_KJ0kf7nExE4jcUyPGFIt2oX-yc/edit?slide=id.g105bf1b29da_0_600#slide=id.g105bf1b29da_0_600" target="_blank">Presentation</a>
+            <a href="https://f71269c3-89e5-45c3-a7c8-04af41df3300.filesusr.com/ugd/9615d6_66d46e5ad68b447aa2c217f8edec88f3.pdf" target="_blank">Certificate</a>
+          </div>
+        </div>
+        <div class="text">
+          <h3>University of Massachusetts Research Internship</h3>
+          <p>Developed an image processing/ML pipeline to track melting ice area over time using Canny edge detection, Gaussian filtering, and unsupervised ML. Created visualizations and presented findings at an abstract session.</p>
+        </div>
+      </div>
+
+      <!-- UIC -->
+      <div class="research-item">
+        <div class="image-buttons">
+          <img src="UIC1.png" alt="UIC Research">
+          <div class="buttons">
+            <a href="https://docs.google.com/presentation/d/13AWyxswwxEAU2CelI9C9kD3RhSmXwGCTVCY__hvKERs/edit?slide=id.p#slide=id.p" target="_blank">Project Info</a>
+          </div>
+        </div>
+        <div class="text">
+          <h3>UIC Chance Summer Program</h3>
+          <p>Gained hands-on experience with electrical circuits and soldering. Received the DPI Digital Standout Scholar award.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const page = window.location.pathname.split("/").pop();
+        document.querySelectorAll('#navbar a.nav-link').forEach(link => {
+          if(link.getAttribute('href') === page) link.classList.add('active');
+        });
+      });
+  </script>
+
+</body>
+</html>

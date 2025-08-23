@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b1e3f;
+      --white: #ffffff;
+      --accent-pink: #ff79a9;
+      --light-blue: #e6f0ff;
+      --text-dark: #333333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Navbar container (filled dynamically) */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    main {
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      width: 100%;
+      padding: 5rem 2rem;
+      transition: background 0.3s;
+    }
+
+    section:nth-child(odd) { background: var(--light-blue); }
+    section:nth-child(even) { background: var(--white); }
+
+    section h2 {
+      color: var(--dark-blue);
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--accent-pink);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      margin: 0.8rem 0;
+    }
+
+    /* Layout for alternating image/text */
+    .content-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .content-row img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .content-text {
+      flex: 1;
+    }
+
+    /* Alternate layout: image right */
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-blue);
+      color: var(--white);
+      margin-top: 4rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    @media (max-width: 800px) {
+      .content-row, .reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable Navbar -->
+  <div id="navbar"></div>
+
+  <main>
+    <!-- About Me -->
+    <section>
+      <div class="content-row">
+        <img src="Esha5.png" alt="Esha Photo 5">
+        <div class="content-text">
+          <h2>About Me</h2>
+          <p>I am a sophomore at University of Illinois Urbana-Champaign, studying Computer Science. I just completed my internship at <strong>Zenblen</strong>, a Chicago-based startup with tech-enabled smoothie kiosks.</p>
+          <p>This internship made me realize that I would like to focus on working with ML and AI-related projects and utilize my skills to give back to the community.</p>
+          <p>In my free time, I enjoy tutoring younger children, dancing, and going on long walks with my dog.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background -->
+    <section>
+      <div class="content-row reverse">
+        <img src="Esha2.png" alt="Esha Photo 2">
+        <div class="content-text">
+          <h2>Background</h2>
+          <p>I have a strong foundation in programming and software development, gained from coursework and hands-on projects during my studies and internship experience.</p>
+          <p>Working at Zenblen allowed me to gain practical experience in full-stack development and problem-solving in real-world scenarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Interests -->
+    <section>
+      <div class="content-row">
+        <img src="Esha3.png" alt="Esha Photo 3">
+        <div class="content-text">
+          <h2>Skills & Interests</h2>
+          <p>Technical skills: JavaScript, React, Python, Flutter, and AI/ML concepts.</p>
+          <p>Interests: tutoring, dancing, exploring new technologies, and contributing to projects that make a positive impact on the community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section>
+      <div class="content-row reverse">
+        <img src="Esha4.png" alt="Esha Photo 4">
+        <div class="content-text">
+          <h2>Goals</h2>
+          <p>I aim to work on ML and AI-driven projects, apply my skills to meaningful work, and continue to grow as a software engineer while helping others through my contributions.</p>
+          <p>Long-term, I hope to combine my technical skills and creativity to build solutions that positively impact society.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section>
+      <div class="content-row">
+        <img src="Esha1.png" alt="Esha Photo 1">
+        <div class="content-text">
+          <h2>Connect</h2>
+          <p>Here are some ways to reach out to me:</p>
+          <p><strong>Phone:</strong> (630) - 891 - 0198</p>
+          <p><strong>Email:</strong> esha.mujumdar@gmail.com</p>
+          <p><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/esha-mujumdar-092477243" target="_blank">www.linkedin.com/in/esha-mujumdar-092477243</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <!-- JS to include the reusable navbar -->
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        document.querySelectorAll('#navbar a').forEach(link => {
+          if(link.href === window.location.href) link.classList.add('active');
+        });
+      });
+  </script>
+
+</body>
+</html>

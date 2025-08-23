@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Experience - My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-blue: #0b1e3f;
+      --white: #ffffff;
+      --accent-pink: #ff79a9;
+      --light-blue: #e6f0ff;
+      --text-dark: #333333;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    main { margin: 0; padding: 0; }
+
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      padding: 5rem 2rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    section:nth-child(odd) { background: var(--light-blue); }
+    section:nth-child(even) { background: var(--white); }
+
+    section h2 {
+      color: var(--dark-blue);
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--accent-pink);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .work-item {
+      margin-bottom: 3rem;
+      padding: 1rem 1.5rem;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .work-item h3 {
+      margin-top: 0;
+      color: var(--dark-blue);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .work-item p { margin: 0.3rem 0; }
+
+    .work-image img {
+      max-width: 250px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .work-image-multi {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .work-image-multi img {
+      width: 48%;
+      max-width: 120px;
+      border-radius: 12px;
+    }
+
+    .work-buttons {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .work-buttons a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-pink);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
+      text-align: center;
+    }
+
+    .work-buttons a:hover {
+      background-color: #ff4f84;
+    }
+
+    .work-text { flex: 1; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--dark-blue);
+      color: var(--white);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 800px) {
+      .work-item { flex-direction: column; text-align: center; }
+      .work-text { margin-top: 1rem; }
+      .work-buttons { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main>
+    <section>
+      <h2>Work Experience</h2>
+
+      <!-- Zenblen -->
+      <div class="work-item">
+        <div class="work-image">
+          <img src="Zenblen.png" alt="Zenblen Internship">
+          <div class="work-buttons">
+            <a href="https://docs.google.com/presentation/d/11YPgvaj22O6QVLsOiHUF5fheofDuXe0rVXvMtJBL-NQ/edit?usp=sharing" target="_blank">Project Info</a>
+          </div>
+        </div>
+        <div class="work-text">
+          <h3>Zenblen - Full Stack Intern</h3>
+          <p>Built Flutter UI screens for a robotic smoothie kiosk, including custom keyboard logic, masked input, and validation for phone numbers and promo codes.</p>
+          <p>Developed React/JavaScript admin pages to view, edit, and sync recipe configurations with the backend.</p>
+          <p>Used NocoDB SDK and UI to create and manage PostgreSQL tables for recipes, ingredients, and software versions.</p>
+          <p>Integrated frontend with backend APIs for fetching and updating kiosk data.</p>
+          <p>Worked with AWS Cognito for user authentication and AWS S3 for storing kiosk assets.</p>
+          <p>Created configuration management tools to update kiosk settings and display synced JSON data.</p>
+          <p>Debugged and tested features on both kiosk simulators and real devices.</p>
+        </div>
+      </div>
+
+
+      <!-- ScholarSphere Tutoring -->
+      <div class="work-item">
+        <div class="work-text">
+          <h3>ScholarSphere Tutoring</h3>
+          <p>Taught SAT Math and English bootcamps, leading 3-hour weekend sessions.</p>
+          <p>Provided one-on-one SAT tutoring tailored to individual student needs and learning styles.</p>
+          <p>Offered private math tutoring in Algebra II and Trigonometry, focusing on concept mastery and problem-solving skills.</p>
+          <p>Created targeted study materials, assigned homework, and tracked student progress.</p>
+          <p>Shared test-taking strategies to improve speed, accuracy, and confidence.</p>
+        </div>
+      </div>
+
+
+
+      <!-- Elite Tutoring -->
+      <div class="work-item">
+        <div class="work-text">
+          <h3>Elite Tutoring</h3>
+          <p>Currently work as a tutor for students of multiple age levels, 7–12 hours/week.</p>
+          <p>For younger students: focus on standardized test prep or foundational Math, English, and Science.</p>
+          <p>For high school students: help with Honors Chemistry, Calculus AB, Honors Algebra, and Trigonometry.</p>
+        </div>
+      </div>
+
+      <!-- StemShala -->
+      <div class="work-item">
+        <div class="work-image">
+          <div class="work-image-multi">
+            <img src="Stemshala1.png" alt="StemShala 1">
+            <img src="Stemshala3.png" alt="StemShala 3">
+          </div>
+        </div>
+        <div class="work-text">
+          <h3>StemShala</h3>
+          <p>Prepared curriculums including presentations and hands-on activities for NXT Lego programming.</p>
+          <p>Assistant coach for FIRST Lego League competitions: observed students, provided feedback, and improved robot runs and judging practices.</p>
+          <p>Prepared weekly curriculums for Scratch programming classes.</p>
+          <p>Participated in FLL Challenge Tournaments for 3 consecutive years, winning Core Value, Project, and Robotics awards.</p>
+          <p>Projects included:</p>
+          <ul>
+            <li>Hydrodynamics – water filtration prototype for underdeveloped countries</li>
+            <li>Into Orbit – virtual swimming exercise prototype for astronauts</li>
+            <li>City Shapers – geo-navigation system for visually impaired</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        const currentPage = window.location.pathname.split("/").pop();
+        document.querySelectorAll('#navbar a.nav-link').forEach(link => {
+          if (link.getAttribute('href') === currentPage) link.classList.add('active');
+        });
+      });
+  </script>
+
+</body>
+</html>
